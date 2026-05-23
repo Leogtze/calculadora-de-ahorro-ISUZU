@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Calculadora de costo total de propiedad: Isuzu 2027 vs Foton vs Hino a 10 años. Descubre cuánto ahorras eligiendo Isuzu.">
+<title>Calculadora de Rentabilidad — Isuzu 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --isuzu-red: #CC0000;
+  --isuzu-red-dark: #990000;
+  --isuzu-green: #1D9E75;
+  --isuzu-green-light: #E1F5EE;
+  --foton-amber: #BA7517;
+  --foton-amber-light: #FAEEDA;
+  --hino-blue: #1a56a0;
+  --hino-blue-light: #E6F1FB;
+  --bg: #0a0a0a;
+  --bg2: #111111;
+  --bg3: #181818;
+  --surface: #1e1e1e;
+  --surface2: #252525;
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.14);
+  --text: #f0f0f0;
+  --text2: #999;
+  --text3: #666;
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(204,0,0,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 80%, rgba(29,158,117,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--isuzu-red);
+  border: 1px solid rgba(204,0,0,0.3);
+  border-radius: 20px;
+  padding: 6px 16px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--isuzu-red);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .5; transform: scale(.8); }
+}
+
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  max-width: 800px;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--isuzu-red);
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--text2);
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.hero-brands {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.brand-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid;
+}
+
+.brand-pill.isuzu { border-color: rgba(29,158,117,.4); color: #5DCAA5; background: rgba(29,158,117,.08); }
+.brand-pill.foton { border-color: rgba(186,117,23,.4); color: #EF9F27; background: rgba(186,117,23,.08); }
+.brand-pill.hino  { border-color: rgba(26,86,160,.4);  color: #85B7EB; background: rgba(26,86,160,.08); }
+
+.brand-pill span { font-weight: 300; font-size: 11px; color: var(--text3); }
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--isuzu-red);
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: .03em;
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background .2s, transform .15s;
+}
+
+.hero-cta:hover { background: var(--isuzu-red-dark); transform: translateY(-2px); }
+.hero-cta svg { transition: transform .2s; }
+.hero-cta:hover svg { transform: translateX(4px); }
+
+/* LEAD FORM */
+.lead-section {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  padding: 3rem 1.5rem;
+}
+
+.lead-inner {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lead-inner h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+.lead-inner p {
+  color: var(--text2);
+  font-size: .95rem;
+  margin-bottom: 1.75rem;
+}
+
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lead-form input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.lead-form input:focus { border-color: var(--isuzu-red); }
+.lead-form input::placeholder { color: var(--text3); }
+
+.lead-form input.error { border-color: #e24b4a; }
+
+.lead-error {
+  font-size: 12px;
+  color: #e24b4a;
+  text-align: left;
+  margin-top: -6px;
+  display: none;
+}
+
+.lead-form button {
+  background: var(--isuzu-red);
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .04em;
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.lead-form button:hover { background: var(--isuzu-red-dark); }
+
+/* CALC SECTION */
+.calc-section {
+  padding: 3rem 1.5rem 5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: .75rem;
+  margin-top: 2rem;
+}
+
+.section-label:first-child { margin-top: 0; }
+
+/* MODELO CARDS */
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-bottom: 0;
+}
+
+.model-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--border);
+  transition: border-color .2s;
+}
+
+.model-card:hover { border-color: var(--border2); }
+.model-card.isuzu-card { border-color: rgba(29,158,117,.25); }
+.model-card.foton-card { border-color: rgba(186,117,23,.2); }
+.model-card.hino-card  { border-color: rgba(26,86,160,.2); }
+
+.card-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: .875rem;
+}
+
+.brand-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  flex: 1;
+}
+
+.year-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+
+.field { margin-bottom: .75rem; }
+.field label { font-size: 12px; color: var(--text2); display: block; margin-bottom: 4px; }
+
+.field select, .field input[type=number] {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  padding: 8px 10px;
+  outline: none;
+  transition: border-color .2s;
+  appearance: auto;
+}
+
+.field select:focus, .field input[type=number]:focus { border-color: rgba(255,255,255,.3); }
+
+.info-chips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin-top: .6rem;
+}
+
+.chip {
+  font-size: 11px;
+  color: var(--text3);
+  background: var(--bg3);
+  border-radius: 6px;
+  padding: 5px 8px;
+  line-height: 1.3;
+}
+
+.chip strong { color: var(--text2); font-weight: 500; }
+.price-line { font-size: 12px; color: var(--text3); margin-top: .5rem; }
+.price-line strong { font-size: 14px; font-weight: 600; }
+.price-isuzu { color: #5DCAA5; }
+.price-foton  { color: #EF9F27; }
+.price-hino   { color: #85B7EB; }
+
+/* PARAMS */
+.params-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+}
+
+.params-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px 16px;
+}
+
+.slider-field label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text2);
+  margin-bottom: 6px;
+}
+
+.slider-val { font-weight: 600; color: var(--text); }
+
+input[type=range] {
+  width: 100%;
+  height: 4px;
+  accent-color: var(--isuzu-red);
+  cursor: pointer;
+}
+
+/* RANKING */
+.ranking-list { display: flex; flex-direction: column; gap: 8px; }
+
+.rank-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: .875rem 1.1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: border-color .2s;
+}
+
+.rank-num {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Syne', sans-serif;
+  flex-shrink: 0;
+}
+
+.rank-info { flex: 1; min-width: 0; }
+.rank-brand { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; }
+.rank-total { font-size: 12px; color: var(--text2); }
+.rank-winner-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: rgba(29,158,117,.15);
+  color: #5DCAA5;
+  border: 1px solid rgba(29,158,117,.3);
+}
+
+/* METRICS */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+}
+
+.metric-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: .875rem 1rem;
+}
+
+.metric-lbl { font-size: 11px; color: var(--text3); margin-bottom: 4px; line-height: 1.3; }
+.metric-val { font-size: 18px; font-weight: 600; font-family: 'Syne', sans-serif; }
+.c-green { color: #5DCAA5; }
+.c-amber { color: #EF9F27; }
+.c-blue  { color: #85B7EB; }
+.c-red   { color: #e24b4a; }
+
+/* VERDICT */
+.verdict-box {
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  border: 1px solid rgba(29,158,117,.3);
+  background: rgba(29,158,117,.06);
+}
+
+.verdict-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #5DCAA5;
+  margin-bottom: 5px;
+}
+
+.verdict-body { font-size: 13px; color: #9FE1CB; line-height: 1.6; }
+
+.be-box {
+  background: rgba(186,117,23,.08);
+  border: 1px solid rgba(186,117,23,.2);
+  border-radius: var(--radius-sm);
+  padding: .75rem 1rem;
+  font-size: 13px;
+  color: #EF9F27;
+}
+
+/* CHART */
+.chart-wrap { position: relative; }
+
+.legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: .75rem;
+}
+
+.leg-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text2);
+}
+
+.leg-dot {
+  width: 10px; height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.bars-container {
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+  height: 220px;
+  padding: 0 2px;
+}
+
+.bar-group {
+  display: flex;
+  gap: 2px;
+  align-items: flex-end;
+  flex: 1;
+}
+
+.bar {
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+  min-height: 4px;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+
+.bar:hover { opacity: .75; }
+.bar-i { background: #1D9E75; }
+.bar-f { background: #BA7517; }
+.bar-h { background: #1a56a0; }
+
+.bar-labels {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.bar-lbl {
+  flex: 1;
+  text-align: center;
+  font-size: 10px;
+  color: var(--text3);
+}
+
+.tooltip-box {
+  position: absolute;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 11px;
+  color: var(--text);
+  pointer-events: none;
+  white-space: nowrap;
+  display: none;
+  z-index: 10;
+  box-shadow: 0 4px 20px rgba(0,0,0,.4);
+}
+
+/* DISCLAIMER */
+.disclaimer {
+  font-size: 11px;
+  color: var(--text3);
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: .75rem 1rem;
+  line-height: 1.5;
+  margin-top: 1rem;
+}
+
+/* WA BUTTON */
+.wa-section {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.wa-inner { max-width: 560px; margin: 0 auto; }
+
+.wa-inner h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+.wa-inner p { color: var(--text2); font-size: .9rem; margin-bottom: 1.5rem; }
+
+.wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: background .2s, transform .15s;
+}
+
+.wa-btn:hover { background: #1ebe5a; transform: translateY(-2px); }
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 12px;
+  color: var(--text3);
+  border-top: 1px solid var(--border);
+}
+
+footer strong { color: var(--text2); }
+
+/* UTIL */
+.divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+.text-center { text-align: center; }
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.9rem; }
+  .model-grid { grid-template-columns: 1fr; }
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span></span>Especialista en flota y transporte rentable
+  </div>
+  <h1>¿Cuánto te <em>cuesta realmente</em> no elegir Isuzu?</h1>
+  <p class="hero-sub">Compara el costo total de propiedad a 10 años entre Isuzu 2027, Foton y Hino. Con datos reales de mantenimiento, combustible y vida útil.</p>
+  <div class="hero-brands">
+    <div class="brand-pill isuzu">
+      <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="#1D9E75"/></svg>
+      Isuzu 2027 <span>desde $799,400</span>
+    </div>
+    <div class="brand-pill foton">
+      <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="#BA7517"/></svg>
+      Foton 2026 <span>desde $655,000</span>
+    </div>
+    <div class="brand-pill hino">
+      <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="#1a56a0"/></svg>
+      Hino 2025 <span>desde $968,625</span>
+    </div>
+  </div>
+  <a href="#calculadora" class="hero-cta">
+    Ver mi comparativa
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+</section>
+
+<!-- LEAD FORM -->
+<section class="lead-section">
+  <div class="lead-inner">
+    <h2>Recibe tu análisis personalizado</h2>
+    <p>Ingresa tus datos y te envío la comparativa de tu operación directamente por WhatsApp.</p>
+    <form class="lead-form" id="leadForm" onsubmit="submitLead(event)">
+      <input type="text" id="lead-nombre" placeholder="Tu nombre" autocomplete="name">
+      <div>
+        <input type="tel" id="lead-wa" placeholder="WhatsApp (10 dígitos)" maxlength="12" autocomplete="tel">
+        <div class="lead-error" id="wa-error">Ingresa un número válido de 10 dígitos (o 12 con prefijo 52).</div>
+      </div>
+      <input type="text" id="lead-empresa" placeholder="Empresa (opcional)" autocomplete="organization">
+      <button type="submit">CALCULAR MI AHORRO →</button>
+    </form>
+  </div>
+</section>
+
+<!-- CALCULADORA -->
+<section class="calc-section" id="calculadora">
+
+  <div class="section-label">Selecciona los modelos a comparar</div>
+  <div class="model-grid">
+
+    <!-- ISUZU -->
+    <div class="model-card isuzu-card">
+      <div class="card-brand">
+        <div class="brand-dot" style="background:#1D9E75"></div>
+        <span class="brand-name">Isuzu</span>
+        <span class="year-badge" style="background:rgba(29,158,117,.15);color:#5DCAA5;border:1px solid rgba(29,158,117,.3)">2027</span>
+      </div>
+      <div class="field">
+        <label>Modelo</label>
+        <select id="sel-i" onchange="onI()">
+          <optgroup label="ELF 100–300">
+            <option value="799400|5545|15000|15|14">ELF 100 E — 1.5 ton — $799,400</option>
+            <option value="979100|5545|15000|15|13">ELF 200 E — 2 ton — $979,100</option>
+            <option value="1081500|5545|15000|15|13">ELF 300 E — 3 ton — $1,081,500</option>
+            <option value="1099800|5545|15000|15|13">ELF 300 H — 3 ton — $1,099,800</option>
+          </optgroup>
+          <optgroup label="★ ELF 350 — más vendido">
+            <option value="1134600|5545|15000|15|12">ELF 350 F — 3.5 ton — $1,134,600</option>
+            <option value="1156600|5545|15000|15|12" selected>ELF 350 H — 3.5 ton — $1,156,600 ★</option>
+            <option value="1171200|5545|15000|15|12">ELF 350 K — 3.5 ton — $1,171,200</option>
+          </optgroup>
+          <optgroup label="ELF 400–600">
+            <option value="1213300|5939|10400|15|11">ELF 400 F — 4 ton — $1,213,300</option>
+            <option value="1237100|5939|10400|15|11">ELF 400 H — 4 ton — $1,237,100</option>
+            <option value="1261700|5939|10400|15|11">ELF 400 K — 4 ton — $1,261,700</option>
+            <option value="1304800|5939|10400|15|11">ELF 500 F — 5 ton — $1,304,800</option>
+            <option value="1317600|5939|10400|15|11">ELF 500 H — 5 ton — $1,317,600</option>
+            <option value="1337700|5939|10400|15|11">ELF 500 K — 5 ton — $1,337,700</option>
+            <option value="1348700|5939|10400|15|11">ELF 500 M — 5 ton — $1,348,700</option>
+            <option value="1381700|5939|10400|15|10">ELF 600 H — 6 ton — $1,381,700</option>
+            <option value="1396300|5939|10400|15|10">ELF 600 K — 6 ton — $1,396,300</option>
+            <option value="1409100|5939|10400|15|10">ELF 600 M — 6 ton — $1,409,100</option>
+          </optgroup>
+          <optgroup label="Forward">
+            <option value="1522800|7336|15000|18|9">FWD 800 K — 8 ton — $1,522,800</option>
+            <option value="1544400|7336|15000|18|9">FWD 800 M — 8 ton — $1,544,400</option>
+            <option value="1776600|8907|15000|18|8">FWD 1100 L — 9.5 ton — $1,776,600</option>
+            <option value="1798200|8907|15000|18|8">FWD 1100 Q — 9.5 ton — $1,798,200</option>
+            <option value="1875600|8907|15000|18|8">FWD 1400 L — 12 ton — $1,875,600</option>
+            <option value="1909800|8907|15000|18|8">FWD 1400 Q — 12 ton — $1,909,800</option>
+            <option value="2026800|10015|15000|20|7">FWD 1800 T — 15.7 ton — $2,026,800</option>
+            <option value="2140200|10015|15000|20|6">FWD 2000 T — 18.3 ton — $2,140,200</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="info-chips">
+        <div class="chip">Mant. <strong id="i-mant">$5,545</strong>/srv</div>
+        <div class="chip">Cada <strong id="i-km">15,000</strong> km</div>
+        <div class="chip">Vida útil <strong id="i-vida">15</strong> años</div>
+        <div class="chip"><strong id="i-rend">12</strong> km/litro</div>
+      </div>
+      <div class="price-line">Precio lista: <strong class="price-isuzu" id="i-precio">$1,156,600</strong></div>
+    </div>
+
+    <!-- FOTON -->
+    <div class="model-card foton-card">
+      <div class="card-brand">
+        <div class="brand-dot" style="background:#BA7517"></div>
+        <span class="brand-name">Foton</span>
+        <span class="year-badge" style="background:rgba(186,117,23,.15);color:#EF9F27;border:1px solid rgba(186,117,23,.3)">2026</span>
+      </div>
+      <div class="field">
+        <label>Modelo</label>
+        <select id="sel-f" onchange="onF()">
+          <optgroup label="Rango ligero">
+            <option value="655000|4200|10000|8|11">Miler — 2.7 ton — $655,000</option>
+            <option value="785000|4500|10000|8|10">Aumark S3 — 3.6 ton — $785,000</option>
+          </optgroup>
+          <optgroup label="Rango medio">
+            <option value="925000|5000|10000|9|10">Aumark S5 — 5.7 ton — $925,000</option>
+            <option value="1005720|5200|10000|9|10" selected>Aumark S6 — 6.6 ton — $1,005,720</option>
+            <option value="1150000|5500|10000|9|9">Aumark S8 — ~8 ton — $1,150,000</option>
+            <option value="1380000|6200|10000|10|8">Aumark S12 — 12 ton — $1,380,000</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="info-chips">
+        <div class="chip">Mant. <strong id="f-mant">$5,200</strong>/srv</div>
+        <div class="chip">Cada <strong id="f-km">10,000</strong> km</div>
+        <div class="chip">Vida útil <strong id="f-vida">9</strong> años</div>
+        <div class="chip"><strong id="f-rend">10</strong> km/litro</div>
+      </div>
+      <div class="price-line">Precio lista: <strong class="price-foton" id="f-precio">$1,005,720</strong></div>
+    </div>
+
+    <!-- HINO -->
+    <div class="model-card hino-card">
+      <div class="card-brand">
+        <div class="brand-dot" style="background:#1a56a0"></div>
+        <span class="brand-name">Hino</span>
+        <span class="year-badge" style="background:rgba(26,86,160,.15);color:#85B7EB;border:1px solid rgba(26,86,160,.3)">2025</span>
+      </div>
+      <div class="field">
+        <label>Modelo</label>
+        <select id="sel-h" onchange="onH()">
+          <optgroup label="Serie 300">
+            <option value="968625|6000|15000|12|12">Hino 514 — 2.7 ton — $968,625</option>
+            <option value="1081500|6000|15000|12|12" selected>Hino 616 — 3.5 ton — $1,081,500</option>
+            <option value="1274595|6500|15000|12|11">Hino 816 — 5 ton — $1,274,595</option>
+          </optgroup>
+          <optgroup label="Serie 500 (precio referencial)">
+            <option value="1500000|7000|15000|13|9">Hino 1018 — ~9 ton — ~$1,500,000</option>
+            <option value="1800000|8000|15000|13|8">Hino 1524 — ~12 ton — ~$1,800,000</option>
+            <option value="2100000|9000|15000|14|7">Hino 1727 — ~15 ton — ~$2,100,000</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="info-chips">
+        <div class="chip">Mant. <strong id="h-mant">$6,000</strong>/srv</div>
+        <div class="chip">Cada <strong id="h-km">15,000</strong> km</div>
+        <div class="chip">Vida útil <strong id="h-vida">12</strong> años</div>
+        <div class="chip"><strong id="h-rend">12</strong> km/litro</div>
+      </div>
+      <div class="price-line">Precio lista: <strong class="price-hino" id="h-precio">$1,081,500</strong></div>
+    </div>
+  </div>
+
+  <!-- PARAMS -->
+  <div class="section-label">Parámetros de operación</div>
+  <div class="params-card">
+    <div class="params-grid">
+      <div class="slider-field">
+        <label>Km por año <span class="slider-val" id="kma-v">80,000</span></label>
+        <input type="range" id="kma" min="20000" max="200000" value="80000" step="5000"
+          oninput="document.getElementById('kma-v').textContent=Number(this.value).toLocaleString('es-MX');recalc()">
+      </div>
+      <div class="slider-field">
+        <label>Precio diésel ($/litro) <span class="slider-val" id="die-v">$23</span></label>
+        <input type="range" id="die" min="18" max="32" value="23" step="1"
+          oninput="document.getElementById('die-v').textContent='$'+this.value;recalc()">
+      </div>
+      <div class="slider-field">
+        <label>Factor fallas Foton año 3+ <span class="slider-val" id="fal-v">2.5x</span></label>
+        <input type="range" id="fal" min="1.0" max="5.0" value="2.5" step="0.1"
+          oninput="document.getElementById('fal-v').textContent=parseFloat(this.value).toFixed(1)+'x';recalc()">
+      </div>
+      <div class="slider-field">
+        <label>Años a comparar <span class="slider-val" id="años-v">10</span></label>
+        <input type="range" id="años" min="1" max="10" value="10" step="1"
+          oninput="document.getElementById('años-v').textContent=this.value;recalc()">
+      </div>
+    </div>
+  </div>
+
+  <!-- RANKING -->
+  <div class="section-label">Ranking de rentabilidad</div>
+  <div class="ranking-list" id="ranking"></div>
+
+  <!-- METRICS -->
+  <div class="section-label">Métricas clave</div>
+  <div class="metrics-grid" id="metrics"></div>
+
+  <!-- VERDICT -->
+  <div id="verdict" style="margin-top:1rem"></div>
+  <div id="be-box" style="margin-top:.6rem"></div>
+
+  <!-- CHART -->
+  <div class="section-label">Costo acumulado por año (MXN)</div>
+  <div class="legend">
+    <div class="leg-item"><div class="leg-dot" style="background:#1D9E75"></div>Isuzu 2027</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#BA7517"></div>Foton 2026</div>
+    <div class="leg-item"><div class="leg-dot" style="background:#1a56a0"></div>Hino 2025</div>
+  </div>
+  <div class="chart-wrap">
+    <div class="tooltip-box" id="tip"></div>
+    <div class="bars-container" id="bars"></div>
+  </div>
+  <div class="bar-labels" id="blbls"></div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <strong>Nota metodológica:</strong> Los costos de mantenimiento Isuzu corresponden a precios oficiales publicados en isuzumex.com.mx vigentes abril 2026. Precios Foton basados en datos públicos orientativos de LDR Solutions / camionesytractocamiones.com. Precios Hino Serie 300 del showroom oficial hino.store.link; Serie 500 son referenciales (se recomienda cotización directa). El factor de fallas representa el incremento en costos de mantenimiento/reparación de marcas emergentes a partir del año 3, basado en experiencia de operadores. Los resultados son estimaciones — solicita una cotización personalizada.
+  </div>
+</section>
+
+<!-- WA CTA -->
+<section class="wa-section">
+  <div class="wa-inner">
+    <h2>¿Quieres una cotización personalizada?</h2>
+    <p>Te envío los números de tu operación específica, opciones de financiamiento Banorte al 0% y la oferta de TIP México con las primeras 3 rentas sin costo.</p>
+    <button class="wa-btn" onclick="abrirWA()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Enviar mi análisis por WhatsApp
+    </button>
+  </div>
+</section>
+
+<footer>
+  Calculadora desarrollada por <strong>Cinthya — Especialista en flota y transporte rentable</strong> · Isuzu Santa Catarina, Nuevo León<br>
+  <span style="margin-top:4px;display:block">Datos de mantenimiento: isuzumex.com.mx · Precios orientativos 2026–2027 · Sujeto a cambios sin previo aviso</span>
+</footer>
+
+<script>
+const WA_NUM = '528134814272';
+
+let D = {
+  i: { p: 1156600, m: 5545, k: 15000, v: 15, r: 12 },
+  f: { p: 1005720, m: 5200, k: 10000, v: 9,  r: 10 },
+  h: { p: 1081500, m: 6000, k: 15000, v: 12, r: 12 }
+};
+
+function fmt(n) { return '$' + Math.round(n).toLocaleString('es-MX'); }
+
+function parseOpt(selId) {
+  const s = document.getElementById(selId);
+  const p = s.options[s.selectedIndex].value.split('|');
+  return { p: +p[0], m: +p[1], k: +p[2], v: +p[3], r: +p[4] };
+}
+
+function updateChips(id, d) {
+  document.getElementById(id + '-mant').textContent  = '$' + Math.round(d.m).toLocaleString('es-MX');
+  document.getElementById(id + '-km').textContent    = Math.round(d.k).toLocaleString('es-MX');
+  document.getElementById(id + '-vida').textContent  = d.v;
+  document.getElementById(id + '-rend').textContent  = d.r;
+  document.getElementById(id + '-precio').textContent = fmt(d.p);
+}
+
+function onI() { D.i = parseOpt('sel-i'); updateChips('i', D.i); recalc(); }
+function onF() { D.f = parseOpt('sel-f'); updateChips('f', D.f); recalc(); }
+function onH() { D.h = parseOpt('sel-h'); updateChips('h', D.h); recalc(); }
+
+function calcArr(d, kmA, diesel, años, falla, esF) {
+  let tot = d.p;
+  const arr = [];
+  for (let a = 1; a <= años; a++) {
+    let mant = (kmA / d.k) * d.m;
+    if (esF && a >= 3) mant *= falla;
+    const comb = (kmA / d.r) * diesel;
+    const depr = a <= d.v ? d.p / d.v : (esF ? mant * 0.2 : 0);
+    tot += mant + comb + depr;
+    arr.push(Math.round(tot));
+  }
+  return arr;
+}
+
+let lastResults = {};
+
+function recalc() {
+  const kmA  = +document.getElementById('kma').value  || 80000;
+  const die  = +document.getElementById('die').value  || 23;
+  const fal  = +document.getElementById('fal').value  || 2.5;
+  const años = +document.getElementById('años').value || 10;
+
+  const iA = calcArr(D.i, kmA, die, años, fal, false);
+  const fA = calcArr(D.f, kmA, die, años, fal, true);
+  const hA = calcArr(D.h, kmA, die, años, fal, false);
+
+  const iT = iA[años-1], fT = fA[años-1], hT = hA[años-1];
+
+  lastResults = { iT, fT, hT, iA, fA, hA, años, kmA };
+
+  const sorted = [
+    { id: 'i', label: 'Isuzu 2027',  total: iT, color: '#1D9E75', tc: '#5DCAA5' },
+    { id: 'f', label: 'Foton 2026',  total: fT, color: '#BA7517', tc: '#EF9F27' },
+    { id: 'h', label: 'Hino 2025',   total: hT, color: '#1a56a0', tc: '#85B7EB' }
+  ].sort((a, b) => a.total - b.total);
+
+  const medals = ['🥇', '🥈', '🥉'];
+  document.getElementById('ranking').innerHTML = sorted.map((s, i) => `
+    <div class="rank-item">
+      <div class="rank-num" style="background:${s.color}22;color:${s.tc}">${i + 1}</div>
+      <div class="rank-info">
+        <div class="rank-brand">${medals[i]} ${s.label}</div>
+        <div class="rank-total">Costo total ${años} años: <strong style="color:${s.tc}">${fmt(s.total)}</strong></div>
+      </div>
+      ${i === 0 ? '<div class="rank-winner-badge">Más rentable</div>' : ''}
+    </div>`).join('');
+
+  const aVsF = Math.round(fT - iT);
+  const aVsH = Math.round(hT - iT);
+  const ckmI = (iT / (kmA * años)).toFixed(2);
+  const ckmF = (fT / (kmA * años)).toFixed(2);
+  const ckmH = (hT / (kmA * años)).toFixed(2);
+
+  document.getElementById('metrics').innerHTML = `
+    <div class="metric-box"><div class="metric-lbl">Isuzu — total ${años} años</div><div class="metric-val c-green">${fmt(iT)}</div></div>
+    <div class="metric-box"><div class="metric-lbl">Foton — total ${años} años</div><div class="metric-val c-amber">${fmt(fT)}</div></div>
+    <div class="metric-box"><div class="metric-lbl">Hino — total ${años} años</div><div class="metric-val c-blue">${fmt(hT)}</div></div>
+    <div class="metric-box"><div class="metric-lbl">Ahorro Isuzu vs Foton</div><div class="metric-val ${aVsF >= 0 ? 'c-green' : 'c-red'}">${fmt(Math.abs(aVsF))} ${aVsF >= 0 ? '↓' : '↑'}</div></div>
+    <div class="metric-box"><div class="metric-lbl">Ahorro Isuzu vs Hino</div><div class="metric-val ${aVsH >= 0 ? 'c-green' : 'c-red'}">${fmt(Math.abs(aVsH))} ${aVsH >= 0 ? '↓' : '↑'}</div></div>
+    <div class="metric-box"><div class="metric-lbl">Costo/km Isuzu</div><div class="metric-val c-green">$${ckmI}</div></div>
+    <div class="metric-box"><div class="metric-lbl">Costo/km Foton</div><div class="metric-val c-amber">$${ckmF}</div></div>
+    <div class="metric-box"><div class="metric-lbl">Costo/km Hino</div><div class="metric-val c-blue">$${ckmH}</div></div>`;
+
+  const isWin = sorted[0].id === 'i';
+  document.getElementById('verdict').innerHTML = isWin
+    ? `<div class="verdict-box">
+        <div class="verdict-title">✓ Isuzu es la opción más rentable a ${años} años</div>
+        <div class="verdict-body">A pesar de la diferencia en precio inicial, el mantenimiento certificado cada ${Math.round(D.i.k).toLocaleString('es-MX')} km, vida útil de ${D.i.v} años y motor EURO VI generan un ahorro de <strong>${fmt(aVsF)}</strong> vs Foton y <strong>${fmt(aVsH)}</strong> vs Hino en el período analizado.</div>
+      </div>`
+    : `<div class="verdict-box" style="border-color:rgba(239,159,39,.3);background:rgba(186,117,23,.06)">
+        <div class="verdict-title" style="color:#EF9F27">Ajusta parámetros para ver ventaja Isuzu</div>
+        <div class="verdict-body" style="color:#FAC775">Aumenta km/año, años de comparación o el factor de fallas para reflejar mejor tu operación real.</div>
+      </div>`;
+
+  let beI = null, beH = null;
+  for (let a = 0; a < años; a++) {
+    if (beI === null && iA[a] <= fA[a]) beI = a + 1;
+    if (beH === null && iA[a] <= hA[a]) beH = a + 1;
+  }
+  let txt = '';
+  if (beI) txt += `Isuzu supera a Foton en rentabilidad desde el <strong>año ${beI}</strong>. `;
+  if (beH) txt += `Isuzu supera a Hino desde el <strong>año ${beH}</strong>.`;
+  document.getElementById('be-box').innerHTML = txt
+    ? `<div class="be-box">⊙ Punto de equilibrio: ${txt}</div>` : '';
+
+  const maxV = Math.max(...iA, ...fA, ...hA);
+  let bH = '', lH = '';
+  for (let a = 0; a < años; a++) {
+    const hi = Math.max(Math.round((iA[a] / maxV) * 200), 4);
+    const hf = Math.max(Math.round((fA[a] / maxV) * 200), 4);
+    const hh = Math.max(Math.round((hA[a] / maxV) * 200), 4);
+    bH += `<div class="bar-group" style="flex:1">
+      <div class="bar bar-i" style="height:${hi}px" onmouseenter="st(event,'Isuzu año ${a+1}','${fmt(iA[a])}')" onmouseleave="ht()"></div>
+      <div class="bar bar-f" style="height:${hf}px" onmouseenter="st(event,'Foton año ${a+1}','${fmt(fA[a])}')" onmouseleave="ht()"></div>
+      <div class="bar bar-h" style="height:${hh}px" onmouseenter="st(event,'Hino año ${a+1}','${fmt(hA[a])}')" onmouseleave="ht()"></div>
+    </div>`;
+    lH += `<div class="bar-lbl" style="flex:1">Año ${a+1}</div>`;
+  }
+  document.getElementById('bars').innerHTML = bH;
+  document.getElementById('blbls').innerHTML = lH;
+}
+
+function st(e, l, v) {
+  const t = document.getElementById('tip');
+  t.style.display = 'block';
+  t.innerHTML = `<strong>${l}</strong><br>${v}`;
+  t.style.left = (e.offsetX + 10) + 'px';
+  t.style.top  = (e.offsetY - 40) + 'px';
+}
+function ht() { document.getElementById('tip').style.display = 'none'; }
+
+// LEAD FORM
+function submitLead(e) {
+  e.preventDefault();
+  const nombre  = document.getElementById('lead-nombre').value.trim();
+  const wa      = document.getElementById('lead-wa').value.trim().replace(/\D/g, '');
+  const empresa = document.getElementById('lead-empresa').value.trim();
+  const errEl   = document.getElementById('wa-error');
+  const waEl    = document.getElementById('lead-wa');
+
+  if (!nombre) { document.getElementById('lead-nombre').classList.add('error'); return; }
+  document.getElementById('lead-nombre').classList.remove('error');
+
+  if (wa.length !== 10 && wa.length !== 12) {
+    waEl.classList.add('error');
+    errEl.style.display = 'block';
+    return;
+  }
+  waEl.classList.remove('error');
+  errEl.style.display = 'none';
+
+  const num = wa.length === 10 ? '52' + wa : wa;
+  const msg = encodeURIComponent(
+    `Hola Cinthya 👋\n\nSoy ${nombre}${empresa ? ' de ' + empresa : ''} y acabo de usar tu calculadora de rentabilidad Isuzu.\n\nMe gustaría recibir mi análisis personalizado y una cotización. ¿Puedes contactarme?`
+  );
+  window.open(`https://wa.me/${WA_NUM}?text=${msg}`, '_blank');
+
+  document.getElementById('leadForm').innerHTML = `<div style="text-align:center;padding:1rem 0">
+    <div style="font-size:2rem;margin-bottom:.5rem">✅</div>
+    <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:#5DCAA5;margin-bottom:.25rem">¡Listo, ${nombre}!</div>
+    <div style="font-size:.9rem;color:var(--text2)">Se abrió WhatsApp con tu mensaje listo. Desplázate para ver tu comparativa.</div>
+  </div>`;
+
+  document.getElementById('calculadora').scrollIntoView({ behavior: 'smooth' });
+}
+
+// WA CTA con resumen de resultados
+function abrirWA() {
+  const r = lastResults;
+  const nombre = document.getElementById('lead-nombre').value.trim() || '';
+  const selI = document.getElementById('sel-i');
+  const selF = document.getElementById('sel-f');
+  const selH = document.getElementById('sel-h');
+  const mI = selI.options[selI.selectedIndex].text.split('—')[0].trim();
+  const mF = selF.options[selF.selectedIndex].text.split('—')[0].trim();
+  const mH = selH.options[selH.selectedIndex].text.split('—')[0].trim();
+
+  const msg = encodeURIComponent(
+    `Hola Cinthya 👋${nombre ? ', soy ' + nombre : ''}.\n\nUsé la calculadora de rentabilidad con estos modelos:\n• Isuzu: ${mI} → ${fmt(r.iT)} en ${r.años} años\n• Foton: ${mF} → ${fmt(r.fT)} en ${r.años} años\n• Hino: ${mH} → ${fmt(r.hT)} en ${r.años} años\n\n¡Isuzu ahorra ${fmt(Math.max(r.fT - r.iT, r.hT - r.iT))} vs la opción más cara! Me gustaría cotizar y conocer las opciones de financiamiento.`
+  );
+  window.open(`https://wa.me/${WA_NUM}?text=${msg}`, '_blank');
+}
+
+// INIT
+onI(); onF(); onH();
+</script>
+</body>
+</html>
