@@ -95,14 +95,16 @@ nav{
 /* HERO */
 .hero{
   min-height:92vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:flex-start;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:2rem;
   padding:5rem 2rem 4rem;
   position:relative;
   overflow:hidden;
 }
+@media(max-width:768px){.hero{grid-template-columns:1fr}.hero-visual{order:-1}}
+.hero-visual{display:flex;align-items:center;justify-content:center;position:relative}
 .hero-bg{
   position:absolute;inset:0;
   background:
@@ -606,8 +608,44 @@ footer strong{color:var(--text2)}
       </a>
       <a href="#versiones" class="btn-secondary">Ver versiones</a>
     </div>
+  </div><!-- /hero-content -->
+  <div class="hero-visual">
+    <svg viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;filter:drop-shadow(0 20px 60px rgba(204,0,0,0.15))">
+      <ellipse cx="260" cy="268" rx="210" ry="14" fill="rgba(0,0,0,0.5)"/>
+      <ellipse cx="138" cy="252" rx="34" ry="34" fill="#111"/>
+      <ellipse cx="138" cy="252" rx="24" ry="24" fill="#1a1a1a"/>
+      <ellipse cx="138" cy="252" rx="10" ry="10" fill="#0a0a0a"/>
+      <circle cx="138" cy="252" r="3" fill="#333"/>
+      <ellipse cx="382" cy="252" rx="34" ry="34" fill="#111"/>
+      <ellipse cx="382" cy="252" rx="24" ry="24" fill="#1a1a1a"/>
+      <ellipse cx="382" cy="252" rx="10" ry="10" fill="#0a0a0a"/>
+      <circle cx="382" cy="252" r="3" fill="#333"/>
+      <path d="M88 248 L88 170 Q90 155 108 148 L165 132 L180 95 Q184 82 200 80 L350 80 Q370 80 378 90 L415 130 L432 132 Q448 138 450 155 L450 248 Z" fill="#0d0d0d"/>
+      <rect x="195" y="84" width="155" height="48" rx="4" fill="#111"/>
+      <path d="M85 245 Q82 200 90 168 Q93 155 112 147 L168 130 L184 92 Q188 78 205 76 L352 76 Q374 76 382 88 L420 128 L436 130 Q455 137 456 156 L458 245 Z" fill="#2a2a2a" opacity="0.98"/>
+      <path d="M140 245 Q142 190 148 158 Q152 140 165 135" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M185 245 Q186 200 190 175 Q193 155 195 140" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+      <path d="M230 245 Q230 205 232 178 Q233 162 234 145" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+      <path d="M275 245 Q274 208 273 182 Q272 165 272 148" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+      <path d="M320 245 Q318 208 316 182 Q314 163 313 148" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+      <path d="M365 245 Q362 205 360 175 Q358 156 358 142" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M410 245 Q408 200 412 168 Q415 150 420 140" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+      <path d="M175 130 Q240 108 310 106 Q370 106 418 128" fill="none" stroke="#3a3a3a" stroke-width="2.5"/>
+      <path d="M85 245 Q170 256 260 258 Q350 258 458 245" fill="#222" stroke="#333" stroke-width="1"/>
+      <path d="M90 168 Q86 200 85 245" fill="#252525" stroke="#2a2a2a" stroke-width="0.5"/>
+      <path d="M456 156 Q458 200 458 245" fill="#252525" stroke="#2a2a2a" stroke-width="0.5"/>
+      <path d="M160 160 Q200 150 240 148 Q280 146 320 148 Q360 150 400 160" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+      <path d="M150 180 Q195 170 240 168 Q285 166 330 168 Q375 170 415 180" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+      <path d="M140 200 Q190 192 240 190 Q290 188 340 190 Q390 192 425 200" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+      <rect x="210" y="106" width="100" height="22" rx="3" fill="#1a1a1a" opacity="0.8"/>
+      <text x="260" y="121" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="11" font-weight="800" fill="#CC0000" letter-spacing="3">D-MAX</text>
+      <text x="260" y="68" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="32" font-weight="900" fill="none" stroke="rgba(204,0,0,0.3)" stroke-width="1">?</text>
+      <text x="260" y="68" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="32" font-weight="900" fill="rgba(204,0,0,0.15)">?</text>
+      <rect x="190" y="272" width="140" height="18" rx="3" fill="rgba(204,0,0,0.12)" stroke="rgba(204,0,0,0.3)" stroke-width="0.5"/>
+      <text x="260" y="284" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="10" font-weight="700" fill="#CC0000" letter-spacing="2">AGOSTO 2026</text>
+    </svg>
   </div>
-  <div class="hero-scroll">
+  <div class="hero-scroll" style="grid-column:1/-1">
     <div class="scroll-line"></div>
     Scroll para conocerla
   </div>
@@ -644,6 +682,13 @@ footer strong{color:var(--text2)}
   <div class="section-tag">Versiones 2026</div>
   <h2>Elige la tuya</h2>
   <p style="color:var(--text2);font-weight:300;max-width:500px;line-height:1.6">5 versiones para cada necesidad. Desde la base de trabajo hasta la top de línea con cuero y tecnología ADAS completa.</p>
+  <div style="display:flex;align-items:flex-start;gap:10px;background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.25);border-radius:6px;padding:.875rem 1.1rem;margin-bottom:.5rem;max-width:640px">
+    <span style="font-size:18px;flex-shrink:0;margin-top:1px">⚠️</span>
+    <div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c9a84c;margin-bottom:3px">Precios de referencia — sujetos a cambio</div>
+      <div style="font-size:12px;color:#aaa;line-height:1.55;font-weight:300">Los precios mostrados son orientativos basados en la información de prelanzamiento disponible al momento. Los precios, versiones y equipamiento oficiales serán confirmados por Isuzu México al momento del lanzamiento en agosto 2026 y podrán variar sin previo aviso. Solicita tu cotización formal al reservar.</div>
+    </div>
+  </div>
 
   <div class="versions-grid">
 
@@ -984,26 +1029,29 @@ function submitReserva(e) {
 
 // Countdown al 1 de agosto 2026
 function updateCountdown() {
-  const launch = new Date('2026-08-01T00:00:00');
+  const launch = new Date(2026, 7, 1);
   const now    = new Date();
-  const diff   = Math.max(0, Math.floor((launch - now) / (1000 * 60 * 60 * 24)));
+  const diff   = Math.max(0, Math.floor((launch.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)));
   const el = document.getElementById('countdown-days');
-  if (el) el.textContent = diff > 0 ? diff : '0';
+  if (el) el.textContent = diff;
 }
-updateCountdown();
+document.addEventListener('DOMContentLoaded', function(){ updateCountdown(); });
+window.addEventListener('load', function(){ updateCountdown(); });
+setTimeout(updateCountdown, 100);
 setInterval(updateCountdown, 60000);
 
 // Strip countdown
 function updateStrip() {
-  const launch = new Date('2026-08-01T00:00:00');
+  const launch = new Date(2026, 7, 1);
   const now    = new Date();
-  const diff   = Math.max(0, Math.floor((launch - now) / (1000 * 60 * 60 * 24)));
+  const diff   = Math.max(0, Math.floor((launch.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)));
   const strip  = document.querySelector('.strip');
-  if (strip && diff > 0) {
-    strip.innerHTML = `<span>●</span> Lista de espera abierta — Faltan <strong>${diff} días</strong> para el lanzamiento en Monterrey <span>●</span>`;
+  if (strip) {
+    strip.innerHTML = `<span>●</span> Lista de espera abierta &nbsp;·&nbsp; Faltan <strong>${diff} días</strong> para el lanzamiento en Monterrey <span>●</span>`;
   }
 }
-updateStrip();
+document.addEventListener('DOMContentLoaded', function(){ updateStrip(); });
+setTimeout(updateStrip, 100);
 </script>
 </body>
 </html>
